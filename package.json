@@ -13,6 +13,7 @@
     "url": "https://github.com/SaiWebApps/vsccc/issues"
   },
   "homepage": "https://github.com/SaiWebApps/vsccc#readme",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.85.0"
   },
