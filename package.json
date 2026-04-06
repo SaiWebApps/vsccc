@@ -17,8 +17,17 @@
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Themes"],
-  "keywords": ["theme", "color theme", "random theme", "theme switcher", "theme scheduler", "carousel"],
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "color theme",
+    "random theme",
+    "theme switcher",
+    "theme scheduler",
+    "carousel"
+  ],
   "activationEvents": [
     "onStartupFinished"
   ],
@@ -43,7 +52,10 @@
       "properties": {
         "vsccc.mode": {
           "type": "string",
-          "enum": ["daily", "timed"],
+          "enum": [
+            "daily",
+            "timed"
+          ],
           "default": "daily",
           "description": "Scheduling mode: 'daily' switches every N days, 'timed' switches 3 times a day (morning, afternoon, evening)."
         },
@@ -99,8 +111,9 @@
     "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
-    "@types/vscode": "^1.85.0",
     "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.7.1",
     "typescript": "^5.3.0"
   }
 }
