@@ -2,12 +2,22 @@
   "name": "vsccc",
   "displayName": "VS Code Theme Carousel",
   "description": "Automatically switches your VS Code color theme on a schedule or on demand.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "publisher": "sairambkrishnan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SaiWebApps/vsccc"
+  },
+  "bugs": {
+    "url": "https://github.com/SaiWebApps/vsccc/issues"
+  },
+  "homepage": "https://github.com/SaiWebApps/vsccc#readme",
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Other"],
+  "categories": ["Themes"],
+  "keywords": ["theme", "color theme", "random theme", "theme switcher", "theme scheduler", "carousel"],
   "activationEvents": [
     "onStartupFinished"
   ],
