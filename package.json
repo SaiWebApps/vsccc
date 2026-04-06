@@ -1,0 +1,95 @@
+{
+  "name": "vsccc",
+  "displayName": "VS Code Theme Carousel",
+  "description": "Automatically switches your VS Code color theme on a schedule or on demand.",
+  "version": "0.1.0",
+  "publisher": "sairambkrishnan",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vsccc.switchTheme",
+        "title": "Theme Carousel: Switch Theme Now"
+      },
+      {
+        "command": "vsccc.recommendTheme",
+        "title": "Theme Carousel: Recommend a Theme"
+      },
+      {
+        "command": "vsccc.openSettings",
+        "title": "Theme Carousel: Open Settings"
+      }
+    ],
+    "configuration": {
+      "title": "Theme Carousel",
+      "properties": {
+        "vsccc.mode": {
+          "type": "string",
+          "enum": ["daily", "timed"],
+          "default": "daily",
+          "description": "Scheduling mode: 'daily' switches every N days, 'timed' switches 3 times a day (morning, afternoon, evening)."
+        },
+        "vsccc.dailyIntervalDays": {
+          "type": "number",
+          "default": 1,
+          "minimum": 1,
+          "description": "When mode is 'daily', switch theme every N days."
+        },
+        "vsccc.timedMorningHour": {
+          "type": "number",
+          "default": 8,
+          "minimum": 0,
+          "maximum": 23,
+          "description": "When mode is 'timed', hour (0-23) for the morning theme switch."
+        },
+        "vsccc.timedAfternoonHour": {
+          "type": "number",
+          "default": 13,
+          "minimum": 0,
+          "maximum": 23,
+          "description": "When mode is 'timed', hour (0-23) for the afternoon theme switch."
+        },
+        "vsccc.timedEveningHour": {
+          "type": "number",
+          "default": 18,
+          "minimum": 0,
+          "maximum": 23,
+          "description": "When mode is 'timed', hour (0-23) for the evening theme switch."
+        },
+        "vsccc.recommendThemes": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable periodic theme recommendations from the VS Code Marketplace."
+        },
+        "vsccc.recommendIntervalDays": {
+          "type": "number",
+          "default": 7,
+          "minimum": 1,
+          "description": "Days between theme recommendations."
+        },
+        "vsccc.showStatusBarIcon": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the Theme Carousel icon in the status bar."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}
